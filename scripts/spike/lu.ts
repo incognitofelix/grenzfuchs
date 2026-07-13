@@ -38,7 +38,11 @@ function parseCsvLine(line: string): string[] {
 
 async function fetchFlow(flow: string): Promise<{ fuelCode: string; date: string; price: number }[]> {
   const url = `${BASE}/LU1,${flow},1.0/all?lastNObservations=1`;
-  const res = await fetch(url, { headers: { Accept: 'application/vnd.sdmx.data+csv' } });
+  // Accept-Language explizit setzen: Nodes fetch sendet sonst "Accept-Language: *",
+  // und das .NET-Backend von LUSTAT antwortet darauf mit HTTP 500 ("languageTag").
+  const res = await fetch(url, {
+    headers: { Accept: 'application/vnd.sdmx.data+csv', 'Accept-Language': 'en' },
+  });
   if (!res.ok) throw new Error(`LU ${flow}: HTTP ${res.status}`);
   const lines = (await res.text()).trim().split('\n');
   const header = parseCsvLine(lines[0]);
