@@ -1,0 +1,16 @@
+{
+  "name": "Grenzfuchs — Schlau tanken, drüben sparen",
+  "short_name": "Grenzfuchs",
+  "description": "Spritpreis-Vergleich DE/FR/LU, Umweg-Rechner und Grenzshopping-Rechner für Pendler in der SaarLorLux-Region. Kostenlos, ohne Anmeldung.",
+  "lang": "de",
+  "display": "standalone",
+  "background_color": "#fdfbf7",
+  "theme_color": "#fdfbf7",
+  "scope": "/grenzfuchs/",
+  "start_url": "/grenzfuchs/",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

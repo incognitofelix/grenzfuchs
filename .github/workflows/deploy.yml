@@ -1,0 +1,50 @@
+# Baut die PWA und deployt sie auf GitHub Pages.
+#
+# Läuft bei Push auf main UND stündlich per Cron: der Cron-Lauf holt frische
+# Preise (fetch-prices) und veröffentlicht sie als statisches data/prices.json
+# mit dem Deployment — die App selbst ruft nie eine externe API auf.
+# Der Tankerkönig-Key liegt ausschließlich im Actions-Secret TANKERKOENIG_API_KEY;
+# ohne Secret wird DE übersprungen (FR + LU laufen keyfrei).
+name: Build & Deploy (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Preise abrufen (DE/FR/LU → public/data/prices.json)
+        run: npm run fetch-prices
+        env:
+          TANKERKOENIG_API_KEY: ${{ secrets.TANKERKOENIG_API_KEY }}
+      - name: Build + Pages-Postprocessing (Flatten, 404, Service Worker)
+        run: npm run build:pages
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/client
+      - id: deployment
+        uses: actions/deploy-pages@v4

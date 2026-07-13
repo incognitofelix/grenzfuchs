@@ -1,0 +1,61 @@
+/* App-Rahmen: mobile-first, auf Desktop als zentrierte 430px-Spalte */
+.app-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--bg-app);
+  font-family: var(--font-display);
+  color: var(--ink);
+  position: relative;
+  padding-bottom: 92px; /* Platz für die fixe Tab-Bar */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
+}
+
+.screen {
+  animation: gfPop 0.25s ease-out;
+}
+
+/* ===== Tab-Bar (persistent) ===== */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: rgba(253, 251, 247, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1.5px solid var(--border-card);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 8px 10px max(18px, env(safe-area-inset-bottom));
+  z-index: 10;
+}
+
+.tabbar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 0;
+  border-radius: 12px;
+}
+
+.tabbar .tab-icon {
+  font-size: 19px;
+  filter: grayscale(1) opacity(0.55);
+}
+
+.tabbar .tab-label {
+  font: 600 10.5px var(--font-display);
+  color: var(--text-3);
+}
+
+.tabbar a.active .tab-icon {
+  filter: none;
+}
+
+.tabbar a.active .tab-label {
+  color: var(--accent-deep);
+}

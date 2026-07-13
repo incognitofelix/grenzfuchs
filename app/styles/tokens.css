@@ -1,0 +1,82 @@
+/* Design-Tokens aus dem Handoff-README — Werte sind final, nicht "ungefähr". */
+:root {
+  /* Akzent (Violett) */
+  --accent: oklch(0.55 0.2 300);
+  --accent-deep: oklch(0.42 0.18 300);
+  --accent-deep-hover: oklch(0.32 0.16 300);
+  --accent-soft: oklch(0.95 0.03 300);
+  --accent-soft-border: oklch(0.88 0.06 300);
+  --accent-hover-border: oklch(0.75 0.1 300);
+
+  /* Text */
+  --ink: #241f2e;
+  --text-2: #6f6a7c;
+  --text-3: #a09aac;
+  --text-body: #3d3849;
+
+  /* Flächen */
+  --bg-app: #fdfbf7;
+  --bg-card: #fff;
+  --border-card: #ece7db;
+  --chip-neutral: #f1ede4;
+  --axis-line: #ded9cd;
+
+  /* Günstiger (Ersparnis) */
+  --good: oklch(0.45 0.12 155);
+  --good-bg: oklch(0.95 0.03 155);
+  --good-border: oklch(0.85 0.06 155);
+  --good-ring: oklch(0.75 0.12 155);
+
+  /* Teurer / Verdicts */
+  --bad: oklch(0.55 0.13 40);
+  --verdict-yes: oklch(0.5 0.13 155);
+  --verdict-close: oklch(0.6 0.11 80);
+  --verdict-no: oklch(0.55 0.13 40);
+
+  /* Warnung (Zoll) */
+  --warn-bg: oklch(0.96 0.04 80);
+  --warn-border: oklch(0.85 0.09 80);
+  --warn-text: oklch(0.45 0.1 60);
+
+  /* Typografie */
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+
+  /* Form */
+  --radius-card: 18px;
+  --radius-card-sm: 16px;
+  --radius-ticket: 20px;
+  --radius-pill: 99px;
+  --radius-button: 12px;
+  --page-pad: 22px;
+}
+
+body {
+  margin: 0;
+  background: #e9e5dc;
+  font-family: var(--font-body);
+}
+
+a {
+  color: var(--accent-deep);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-deep-hover);
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+@keyframes gfPop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
