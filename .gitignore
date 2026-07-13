@@ -11,6 +11,9 @@ build/
 .env.*
 !.env.example
 
+# Spike-/Job-Output (Rohdaten, nicht versionieren)
+scripts/spike/spike-output.json
+
 # Logs & Caches
 *.log
 .cache/

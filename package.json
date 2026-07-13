@@ -1,0 +1,9 @@
+{
+  "name": "grenzfuchs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "spike": "tsx scripts/spike/spike.ts"
+  }
+}
