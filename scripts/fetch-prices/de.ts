@@ -1,9 +1,16 @@
-import type { SourceResult, SpikeStation } from './types.ts';
+import type { SourceInfo, Station } from '../../app/data/types.ts';
 
 // Tankerkönig (MTS-K), CC BY 4.0 — Attribution in README & App-Footer!
-// Umkreissuche um Saarbrücken-Zentrum; Key kommt aus .env (nie committen).
+// Key aus .env / Actions-Secret; Abruf nur im Cron-Job, nie pro App-Besucher.
 const URL = 'https://creativecommons.tankerkoenig.de/json/list.php';
 const SB = { lat: 49.2354, lng: 6.9819, rad: 15 };
+
+export const DE_SOURCE: SourceInfo = {
+  land: 'DE',
+  name: 'Tankerkönig (MTS-K)',
+  url: 'https://www.tankerkoenig.de/',
+  license: 'CC BY 4.0',
+};
 
 interface TkStation {
   id: string;
@@ -12,15 +19,13 @@ interface TkStation {
   place: string;
   lat: number;
   lng: number;
-  dist: number;
   diesel: number | null;
   e5: number | null;
   e10: number | null;
   isOpen: boolean;
 }
 
-export async function fetchDE(apiKey: string): Promise<SourceResult> {
-  const notes: string[] = [];
+export async function fetchDE(apiKey: string): Promise<Omit<Station, 'kmFromSb'>[]> {
   const params = new URLSearchParams({
     lat: String(SB.lat),
     lng: String(SB.lng),
@@ -34,14 +39,11 @@ export async function fetchDE(apiKey: string): Promise<SourceResult> {
   const data = (await res.json()) as { ok: boolean; message?: string; stations?: TkStation[] };
   if (!data.ok) throw new Error(`DE: API-Fehler: ${data.message}`);
 
-  const all = data.stations ?? [];
-  notes.push(`${all.length} Stationen im ${SB.rad}-km-Umkreis um Saarbrücken (davon offen: ${all.filter((s) => s.isOpen).length})`);
-
-  const stations: SpikeStation[] = all
+  return (data.stations ?? [])
     .filter((s) => s.isOpen)
     .map((s) => ({
+      id: `de-${s.id}`,
       land: 'DE' as const,
-      source: 'Tankerkönig (CC BY 4.0)',
       name: s.brand || s.name,
       ort: s.place,
       lat: s.lat,
@@ -53,5 +55,4 @@ export async function fetchDE(apiKey: string): Promise<SourceResult> {
       },
     }))
     .filter((s) => Object.keys(s.prices).length > 0);
-  return { source: 'DE', fetchedAt: new Date().toISOString(), stations, notes };
 }

@@ -1,0 +1,695 @@
+{
+ "schemaVersion": 1,
+ "fetchedAt": "2026-07-13T21:38:07.399Z",
+ "stations": [
+  {
+   "id": "fr-57600003",
+   "land": "FR",
+   "name": "655 Rue De Sarreguemines",
+   "ort": "Oeting",
+   "lat": 49.174,
+   "lon": 6.918,
+   "prices": {
+    "diesel": 1.998,
+    "e10": 1.938
+   },
+   "kmFromSb": 8.3
+  },
+  {
+   "id": "fr-57520001",
+   "land": "FR",
+   "name": "15 Avenue Marchande",
+   "ort": "Grosbliederstroff",
+   "lat": 49.134,
+   "lon": 7.044,
+   "prices": {
+    "diesel": 1.974,
+    "e10": 1.889
+   },
+   "kmFromSb": 12.1
+  },
+  {
+   "id": "fr-57350001",
+   "land": "FR",
+   "name": "3, Rue Nationale",
+   "ort": "Spicheren",
+   "lat": 49.205,
+   "lon": 6.956,
+   "prices": {
+    "diesel": 1.899,
+    "e10": 1.949
+   },
+   "kmFromSb": 3.9
+  },
+  {
+   "id": "fr-57500002",
+   "land": "FR",
+   "name": "Rue Du Général Mangin",
+   "ort": "Saint-Avold",
+   "lat": 49.108,
+   "lon": 6.719,
+   "prices": {
+    "diesel": 2.019,
+    "e10": 1.989
+   },
+   "kmFromSb": 23.8
+  },
+  {
+   "id": "fr-57800001",
+   "land": "FR",
+   "name": "Rue Houillère",
+   "ort": "Freyming-Merlebach",
+   "lat": 49.148084755643,
+   "lon": 6.8102671383,
+   "prices": {
+    "diesel": 1.989,
+    "e10": 1.929
+   },
+   "kmFromSb": 15.8
+  },
+  {
+   "id": "fr-57800005",
+   "land": "FR",
+   "name": "Rue Nationale",
+   "ort": "Rosbruck",
+   "lat": 49.157817,
+   "lon": 6.848837,
+   "prices": {
+    "diesel": 1.99,
+    "e5": 2.019
+   },
+   "kmFromSb": 13
+  },
+  {
+   "id": "fr-57200004",
+   "land": "FR",
+   "name": "Route De Bitche",
+   "ort": "Sarreguemines",
+   "lat": 49.117,
+   "lon": 7.101,
+   "prices": {
+    "diesel": 1.974,
+    "e5": 1.995,
+    "e10": 1.889
+   },
+   "kmFromSb": 15.8
+  },
+  {
+   "id": "fr-57500001",
+   "land": "FR",
+   "name": "Avenue Du Général Patton",
+   "ort": "Saint-Avold",
+   "lat": 49.116,
+   "lon": 6.708,
+   "prices": {
+    "diesel": 2.055
+   },
+   "kmFromSb": 23.9
+  },
+  {
+   "id": "fr-57910002",
+   "land": "FR",
+   "name": "Rue Principale",
+   "ort": "Hambach",
+   "lat": 49.083,
+   "lon": 7.04,
+   "prices": {
+    "diesel": 1.999,
+    "e5": 1.995,
+    "e10": 1.955
+   },
+   "kmFromSb": 17.5
+  },
+  {
+   "id": "fr-57200002",
+   "land": "FR",
+   "name": "24 Rue Du Maréchal Foch",
+   "ort": "Sarreguemines",
+   "lat": 49.114,
+   "lon": 7.074,
+   "prices": {
+    "diesel": 1.998,
+    "e10": 1.908
+   },
+   "kmFromSb": 15.1
+  },
+  {
+   "id": "fr-57600015",
+   "land": "FR",
+   "name": "19 Rue Nationale",
+   "ort": "Forbach",
+   "lat": 49.19,
+   "lon": 6.908,
+   "prices": {
+    "diesel": 1.969,
+    "e10": 1.934
+   },
+   "kmFromSb": 7.4
+  },
+  {
+   "id": "fr-57600002",
+   "land": "FR",
+   "name": "199 Rue Nationale",
+   "ort": "Forbach",
+   "lat": 49.182,
+   "lon": 6.89,
+   "prices": {
+    "diesel": 1.998,
+    "e10": 1.938
+   },
+   "kmFromSb": 8.9
+  },
+  {
+   "id": "fr-57600005",
+   "land": "FR",
+   "name": "Avenue De L'Europe",
+   "ort": "Forbach",
+   "lat": 49.175,
+   "lon": 6.884,
+   "prices": {
+    "diesel": 1.99,
+    "e5": 2.078,
+    "e10": 1.937
+   },
+   "kmFromSb": 9.8
+  },
+  {
+   "id": "fr-57600014",
+   "land": "FR",
+   "name": "Rue De Sarreguemines",
+   "ort": "Oeting",
+   "lat": 49.177,
+   "lon": 6.927,
+   "prices": {
+    "diesel": 1.998,
+    "e5": 2.078,
+    "e10": 1.943
+   },
+   "kmFromSb": 7.6
+  },
+  {
+   "id": "fr-57800002",
+   "land": "FR",
+   "name": "Rn 3",
+   "ort": "Betting",
+   "lat": 49.139,
+   "lon": 6.799,
+   "prices": {
+    "diesel": 1.998,
+    "e10": 1.938
+   },
+   "kmFromSb": 17.1
+  },
+  {
+   "id": "fr-57150005",
+   "land": "FR",
+   "name": "35 Rue Du Barrois",
+   "ort": "Creutzwald",
+   "lat": 49.19543,
+   "lon": 6.70652,
+   "prices": {
+    "diesel": 1.965,
+    "e10": 1.925
+   },
+   "kmFromSb": 20.5
+  },
+  {
+   "id": "fr-57470004",
+   "land": "FR",
+   "name": "6 Rue De Metz",
+   "ort": "Hombourg-Haut",
+   "lat": 49.123596,
+   "lon": 6.77739,
+   "prices": {
+    "diesel": 1.989,
+    "e10": 1.929
+   },
+   "kmFromSb": 19.4
+  },
+  {
+   "id": "fr-57450003",
+   "land": "FR",
+   "name": "63 Avenue Saint Jean",
+   "ort": "Farébersviller",
+   "lat": 49.11,
+   "lon": 6.856,
+   "prices": {
+    "diesel": 1.949,
+    "e5": 2.019,
+    "e10": 1.979
+   },
+   "kmFromSb": 16.7
+  },
+  {
+   "id": "fr-57200001",
+   "land": "FR",
+   "name": "60 Route De Nancy",
+   "ort": "Sarreguemines",
+   "lat": 49.10011,
+   "lon": 7.05924,
+   "prices": {
+    "diesel": 2.016,
+    "e10": 1.969
+   },
+   "kmFromSb": 16.1
+  },
+  {
+   "id": "fr-57150002",
+   "land": "FR",
+   "name": "3 Rue Du Barrois",
+   "ort": "Creutzwald",
+   "lat": 49.202,
+   "lon": 6.708,
+   "prices": {
+    "diesel": 1.975,
+    "e10": 1.93
+   },
+   "kmFromSb": 20.2
+  },
+  {
+   "id": "fr-57200003",
+   "land": "FR",
+   "name": "Rue Poincarré",
+   "ort": "Sarreguemines",
+   "lat": 49.10655,
+   "lon": 7.07164,
+   "prices": {
+    "diesel": 1.989,
+    "e10": 1.899
+   },
+   "kmFromSb": 15.7
+  },
+  {
+   "id": "fr-57804001",
+   "land": "FR",
+   "name": "4 Rue Des Genêts Zac De Betting",
+   "ort": "Freyming-Merlebach",
+   "lat": 49.137,
+   "lon": 6.808,
+   "prices": {
+    "diesel": 1.989,
+    "e10": 1.929
+   },
+   "kmFromSb": 16.7
+  },
+  {
+   "id": "fr-57510004",
+   "land": "FR",
+   "name": "Rue De Forbach",
+   "ort": "Puttelange Aux Lacs",
+   "lat": 49.058497027258,
+   "lon": 6.920654535928801,
+   "prices": {
+    "diesel": 1.999,
+    "e10": 1.949
+   },
+   "kmFromSb": 20.2
+  },
+  {
+   "id": "fr-57980003",
+   "land": "FR",
+   "name": "130 Rue Principale",
+   "ort": "Diebling",
+   "lat": 49.112405,
+   "lon": 6.930695,
+   "prices": {
+    "diesel": 1.999,
+    "e10": 1.949
+   },
+   "kmFromSb": 14.2
+  },
+  {
+   "land": "LU",
+   "id": "lu-frisange",
+   "name": "Gulf Frisange",
+   "ort": "Frisange",
+   "lat": 49.5106,
+   "lon": 6.1908,
+   "prices": {
+    "e5": 1.865,
+    "e10": 1.698,
+    "diesel": 1.642
+   },
+   "isOfficialMax": true,
+   "kmFromSb": 64.9
+  },
+  {
+   "land": "LU",
+   "id": "lu-dudelange",
+   "name": "Q8 Dudelange",
+   "ort": "Dudelange",
+   "lat": 49.4806,
+   "lon": 6.0875,
+   "prices": {
+    "e5": 1.865,
+    "e10": 1.698,
+    "diesel": 1.642
+   },
+   "isOfficialMax": true,
+   "kmFromSb": 70.3
+  },
+  {
+   "land": "LU",
+   "id": "lu-schengen",
+   "name": "Shell Schengen",
+   "ort": "Schengen",
+   "lat": 49.4703,
+   "lon": 6.3644,
+   "prices": {
+    "e5": 1.865,
+    "e10": 1.698,
+    "diesel": 1.642
+   },
+   "isOfficialMax": true,
+   "kmFromSb": 51.8
+  },
+  {
+   "id": "de-c7aabebc-089b-4553-a54c-bd42a38acd12",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Saarbrücken",
+   "lat": 49.23902,
+   "lon": 6.976791,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 0.5
+  },
+  {
+   "id": "de-e1a15081-2553-9107-e040-0b0a3dfe563c",
+   "land": "DE",
+   "name": "HEM",
+   "ort": "Saarbrücken",
+   "lat": 49.232675,
+   "lon": 6.97210278,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 0.8
+  },
+  {
+   "id": "de-75d419ba-f751-426f-8294-61428a01b54e",
+   "land": "DE",
+   "name": "OEL Schneider GmbH Wiesenstraße",
+   "ort": "Saarbrücken",
+   "lat": 49.236881256104,
+   "lon": 6.9650120735169,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 1.2
+  },
+  {
+   "id": "de-a1286218-bf60-48fd-bea9-02e81942f463",
+   "land": "DE",
+   "name": "TotalEnergies",
+   "ort": "Saarbruecken",
+   "lat": 49.240977,
+   "lon": 7.001475,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 1.6
+  },
+  {
+   "id": "de-fd9e51e6-6e86-4dc7-b296-2afc705e1cf9",
+   "land": "DE",
+   "name": "TotalEnergies",
+   "ort": "Saarbruecken",
+   "lat": 49.237582,
+   "lon": 7.004841,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 1.7
+  },
+  {
+   "id": "de-edd84186-285c-477c-a2ef-350390c634df",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Saarbrücken",
+   "lat": 49.22948,
+   "lon": 7.007818,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 2
+  },
+  {
+   "id": "de-b3f3445a-f88d-5819-e100-00000630df04",
+   "land": "DE",
+   "name": "AGIP ENI",
+   "ort": "Saarbrücken",
+   "lat": 49.209271,
+   "lon": 6.9669,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 3.1
+  },
+  {
+   "id": "de-22362b55-1a87-46ba-a4a6-d73bb9611162",
+   "land": "DE",
+   "name": "Shell",
+   "ort": "Saarbruecken",
+   "lat": 49.208502,
+   "lon": 6.967568,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 3.2
+  },
+  {
+   "id": "de-01113d91-8f68-451f-a5f4-42225c15eb82",
+   "land": "DE",
+   "name": "TotalEnergies",
+   "ort": "Saarbruecken",
+   "lat": 49.209499,
+   "lon": 6.963703,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 3.2
+  },
+  {
+   "id": "de-071542b0-8934-49a5-a28f-5ed5cfbdb1f2",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Saarbrücken",
+   "lat": 49.2255,
+   "lon": 7.029655,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 3.6
+  },
+  {
+   "id": "de-89fb9ca1-31f1-47de-b6f7-dc963705d089",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Saarbrücken",
+   "lat": 49.207394,
+   "lon": 7.021482,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 4.2
+  },
+  {
+   "id": "de-8485d9a1-fb9b-476e-9cc3-17d00dcdcee0",
+   "land": "DE",
+   "name": "Globus SB Warenhaus",
+   "ort": "Saarbrücken",
+   "lat": 49.20958,
+   "lon": 7.02703,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 4.4
+  },
+  {
+   "id": "de-7fdb8d9b-aff0-457f-8510-177723ce400a",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Saarbrücken",
+   "lat": 49.19524,
+   "lon": 7.02359,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 5.4
+  },
+  {
+   "id": "de-e957e5a6-023a-464b-95be-af6bfdba1461",
+   "land": "DE",
+   "name": "Shell",
+   "ort": "Saarbruecken",
+   "lat": 49.205334,
+   "lon": 7.055768,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 6.3
+  },
+  {
+   "id": "de-45b7c9b9-9847-4b47-bf98-4d74a139a560",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Völklingen",
+   "lat": 49.247547,
+   "lon": 6.859246,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 9
+  },
+  {
+   "id": "de-9c1f0bbf-a027-4ac4-a4c6-59675521ec33",
+   "land": "DE",
+   "name": "Globus SB Warenhaus",
+   "ort": "Völklingen",
+   "lat": 49.24711,
+   "lon": 6.84847,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 9.8
+  },
+  {
+   "id": "de-fb7304aa-ecca-450d-9e79-23a504e97b05",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "St. Ingbert",
+   "lat": 49.27561,
+   "lon": 7.110575,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 10.4
+  },
+  {
+   "id": "de-39e3bcba-c1aa-4bac-84fc-fa2f38130f1b",
+   "land": "DE",
+   "name": "Shell",
+   "ort": "St. Ingbert",
+   "lat": 49.269394,
+   "lon": 7.136992,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 11.9
+  },
+  {
+   "id": "de-f1d53b3e-fcf7-4b2d-800f-055d55f86d0a",
+   "land": "DE",
+   "name": "Shell",
+   "ort": "Kleinblittersdorf",
+   "lat": 49.12457,
+   "lon": 7.052356,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 13.3
+  },
+  {
+   "id": "de-f5036453-70c6-4b04-85af-b0e6dc9fec9b",
+   "land": "DE",
+   "name": "ARAL",
+   "ort": "Spiesen-Elversberg",
+   "lat": 49.317688,
+   "lon": 7.122482,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 13.7
+  },
+  {
+   "id": "de-15423b42-695a-4ead-93a4-0c9f0f95f58f",
+   "land": "DE",
+   "name": "BFT Mirold",
+   "ort": "Wadgassen",
+   "lat": 49.24761,
+   "lon": 6.79392,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 13.7
+  },
+  {
+   "id": "de-55d81407-6ae3-4fe6-abf0-81ce937f3594",
+   "land": "DE",
+   "name": "Winkler 24h",
+   "ort": "Sankt Ingbert",
+   "lat": 49.278808,
+   "lon": 7.174321,
+   "prices": {
+    "diesel": 1.009,
+    "e5": 1.009,
+    "e10": 1.009
+   },
+   "kmFromSb": 14.8
+  }
+ ],
+ "sources": [
+  {
+   "land": "FR",
+   "name": "prix-carburants.gouv.fr (flux instantané)",
+   "url": "https://www.prix-carburants.gouv.fr/rubrique/opendata/",
+   "license": "Licence Ouverte 2.0"
+  },
+  {
+   "land": "LU",
+   "name": "STATEC/LUSTAT — amtliche Höchstpreise",
+   "url": "https://lustat.statec.lu/",
+   "license": "CC0"
+  },
+  {
+   "land": "DE",
+   "name": "Tankerkönig (MTS-K)",
+   "url": "https://www.tankerkoenig.de/",
+   "license": "CC BY 4.0"
+  }
+ ]
+}
