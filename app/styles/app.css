@@ -15,6 +15,78 @@
   animation: gfPop 0.25s ease-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .screen {
+    animation: none;
+  }
+}
+
+/* ===== Home ===== */
+.home-head {
+  padding: 14px var(--page-pad) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+.bell-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--chip-neutral);
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+.home-intro {
+  padding: 14px var(--page-pad) 0;
+}
+.home-h1 {
+  margin: 0;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+.home-h1 .accent {
+  color: var(--accent-mid);
+}
+.home-sub {
+  margin: 8px 0 0;
+  font: 400 14px/1.5 var(--font-body);
+  color: var(--text-2);
+}
+.home-ticket {
+  margin-top: 18px;
+}
+.tiles-grid {
+  padding: 20px var(--page-pad) 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 /* ===== Tab-Bar (persistent) ===== */
 .tabbar {
   position: fixed;

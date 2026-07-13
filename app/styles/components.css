@@ -1,0 +1,532 @@
+/* ===== Screen-Kopf ===== */
+.screen-head {
+  padding: 12px var(--page-pad) 0;
+}
+.back-link {
+  display: inline-block;
+  padding: 4px 0;
+  font: 600 13.5px var(--font-display);
+  color: var(--accent-deep);
+}
+.screen-title {
+  margin: 4px 0 0;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.screen-sub {
+  margin: 5px 0 0;
+  font: 400 13.5px/1.5 var(--font-body);
+  color: var(--text-2);
+}
+
+/* ===== Ticket (Signatur-Element) ===== */
+.ticket {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+  border-radius: var(--radius-ticket);
+  padding: 18px 20px;
+  color: #fff;
+  text-align: left;
+  width: calc(100% - 2 * var(--page-pad));
+  margin: 16px var(--page-pad) 0;
+  font-family: inherit;
+}
+.ticket::before,
+.ticket::after {
+  content: '';
+  position: absolute;
+  top: var(--notch-top, 55%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-app);
+}
+.ticket::before {
+  left: -9px;
+}
+.ticket::after {
+  right: -9px;
+}
+button.ticket {
+  cursor: pointer;
+}
+.ticket-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.ticket-bigrow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+.ticket-big {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+.ticket-big-xl {
+  font-size: 46px;
+}
+.ticket-bigside {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+.ticket-verdict {
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+.ticket-divider {
+  border-top: 2px dashed rgba(255, 255, 255, 0.3);
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.ticket-rows {
+  display: grid;
+  gap: 5px;
+  font: 500 13px var(--font-body);
+}
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+}
+.ticket-row .dim {
+  opacity: 0.85;
+}
+.ticket-row .strong {
+  font-weight: 700;
+}
+
+/* ===== Karten & Kacheln ===== */
+.card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-card);
+}
+.tile {
+  display: block;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 16px 15px;
+  min-height: 96px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+  box-sizing: border-box;
+}
+.tile-icon {
+  font-size: 22px;
+}
+.tile-label {
+  font-size: 14.5px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.tile-accent {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft-border);
+}
+.tile-accent .tile-label {
+  color: var(--accent-deep);
+}
+@media (hover: hover) {
+  .tile:hover,
+  .article-card:hover {
+    border-color: var(--accent-hover-border);
+  }
+}
+
+/* ===== Filter-Pills ===== */
+.pills {
+  display: flex;
+  gap: 8px;
+  padding: 14px var(--page-pad) 0;
+}
+.pill {
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  font: 600 13.5px var(--font-display);
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text-2);
+  border: 1.5px solid var(--border-card);
+}
+.pill.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ===== Slider ===== */
+.slider-head {
+  display: flex;
+  justify-content: space-between;
+  font: 500 12.5px var(--font-body);
+  color: var(--text-2);
+}
+.slider-value {
+  font-weight: 700;
+  color: var(--ink);
+}
+.slider {
+  width: 100%;
+  accent-color: var(--accent);
+  margin-top: 4px;
+}
+
+/* ===== Achsen-Karte (Sprit) ===== */
+.axis-card {
+  margin: 12px var(--page-pad) 0;
+  padding: 18px 18px 14px;
+}
+.axis-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.axis-line {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 13px;
+  border-top: 2.5px dashed var(--axis-line);
+}
+.axis-stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 33%;
+}
+.axis-land {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 11px var(--font-display);
+  background: var(--chip-neutral);
+  color: var(--text-2);
+  border: 2px solid var(--axis-line);
+}
+.axis-stop.best .axis-land {
+  background: var(--good-bg);
+  color: var(--good);
+  border-color: var(--good-ring);
+}
+.axis-price {
+  font: 700 14px var(--font-display);
+  color: var(--bad);
+}
+.axis-stop.best .axis-price {
+  color: var(--good);
+}
+.axis-ort {
+  font: 400 10.5px var(--font-body);
+  color: var(--text-3);
+}
+
+/* ===== Tankstellen-Liste ===== */
+.station-list {
+  padding: 14px var(--page-pad) 0;
+  display: grid;
+  gap: 8px;
+}
+.group-label {
+  font: 700 12px var(--font-display);
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px 2px 8px;
+}
+.station-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-card-sm);
+  padding: 13px 15px;
+}
+.station-card.cheapest {
+  border-color: var(--good-border);
+}
+.station-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font: 700 12px var(--font-display);
+  background: var(--chip-neutral);
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+.station-card.cheapest .station-badge {
+  background: var(--good-bg);
+  color: var(--good);
+}
+.station-main {
+  flex: 1;
+  min-width: 0;
+}
+.station-name {
+  font: 700 14px var(--font-display);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.station-ort {
+  font: 400 12px var(--font-body);
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.station-price-box {
+  text-align: right;
+}
+.station-price {
+  font: 800 17px var(--font-display);
+}
+.station-delta {
+  font: 600 11px var(--font-body);
+  color: var(--text-3);
+}
+.station-card.cheapest .station-delta {
+  color: var(--good);
+}
+
+/* ===== Preis-Alarm ===== */
+.alarm-card {
+  margin: 18px var(--page-pad) 10px;
+  background: var(--accent-soft);
+  border: 1.5px solid var(--accent-soft-border);
+  border-radius: var(--radius-card);
+  padding: 16px 18px;
+}
+.alarm-title {
+  font: 700 14px var(--font-display);
+  color: var(--accent-deep);
+}
+.alarm-text {
+  margin: 5px 0 10px;
+  font: 400 12.5px/1.5 var(--font-body);
+  color: var(--text-2);
+}
+.alarm-form {
+  display: flex;
+  gap: 8px;
+}
+.alarm-input {
+  flex: 1;
+  min-width: 0;
+  border: 1.5px solid var(--accent-soft-border);
+  border-radius: var(--radius-button);
+  padding: 11px 13px;
+  font: 400 13.5px var(--font-body);
+  background: var(--bg-card);
+  color: var(--ink);
+  outline: none;
+}
+.alarm-confirm {
+  font: 600 13.5px/1.5 var(--font-display);
+  color: var(--accent-deep);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  border: none;
+  border-radius: var(--radius-button);
+  padding: 11px 16px;
+  background: var(--accent);
+  color: #fff;
+  font: 700 13.5px var(--font-display);
+  cursor: pointer;
+}
+
+/* ===== Grenzshopping ===== */
+.product-card {
+  padding: 14px 16px;
+}
+.product-card.over {
+  border-color: var(--warn-border);
+}
+.product-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.product-icon {
+  font-size: 22px;
+}
+.product-main {
+  flex: 1;
+  min-width: 0;
+}
+.product-name {
+  font: 700 14.5px var(--font-display);
+}
+.product-unit {
+  font: 400 12px var(--font-body);
+  color: var(--text-2);
+}
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stepper-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-card);
+  background: var(--bg-app);
+  font: 700 17px var(--font-display);
+  color: var(--ink);
+  cursor: pointer;
+}
+.stepper-btn.plus {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+}
+.stepper-qty {
+  min-width: 26px;
+  text-align: center;
+  font: 800 16px var(--font-display);
+}
+.product-save {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1.5px dashed var(--border-card);
+  margin-top: 11px;
+  padding-top: 9px;
+  font: 600 12.5px var(--font-body);
+}
+.product-save .label {
+  color: var(--text-2);
+}
+.product-save .value {
+  color: var(--good);
+}
+.warn-box {
+  margin-top: 10px;
+  background: var(--warn-bg);
+  border: 1.5px solid var(--warn-border);
+  border-radius: var(--radius-button);
+  padding: 9px 12px;
+  font: 600 12px/1.45 var(--font-body);
+  color: var(--warn-text);
+}
+
+/* ===== Ratgeber & Artikel ===== */
+.article-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 16px 17px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+  box-sizing: border-box;
+}
+.kicker {
+  font: 600 11px var(--font-display);
+  color: var(--accent-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.article-card-title {
+  font: 700 16.5px/1.25 var(--font-display);
+  margin-top: 6px;
+}
+.article-card-teaser {
+  font: 400 13px/1.5 var(--font-body);
+  color: var(--text-2);
+  margin-top: 5px;
+}
+.article-title {
+  margin: 6px 0 0;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+.article-meta {
+  margin: 8px 0 0;
+  font: 400 12px var(--font-body);
+  color: var(--text-3);
+}
+.article-body {
+  padding: 14px var(--page-pad) 10px;
+}
+.article-body h2 {
+  margin: 20px 0 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.article-body p {
+  margin: 11px 0 0;
+  font: 400 15px/1.65 var(--font-body);
+  color: var(--text-body);
+  text-wrap: pretty;
+}
+.article-li {
+  display: flex;
+  gap: 10px;
+  margin: 9px 0 0;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: 500 13.5px/1.5 var(--font-body);
+  color: var(--text-body);
+}
+.tipp-box {
+  margin: 22px 0 6px;
+  background: var(--accent-soft);
+  border: 1.5px solid var(--accent-soft-border);
+  border-radius: var(--radius-card-sm);
+  padding: 14px 16px;
+}
+.tipp-title {
+  font: 700 14px var(--font-display);
+  color: var(--accent-deep);
+}
+.tipp-text {
+  margin: 5px 0 10px;
+  font: 400 13px/1.55 var(--font-body);
+  color: var(--text-body);
+}
+
+/* ===== Sonstiges ===== */
+.footnote {
+  margin: 12px var(--page-pad) 10px;
+  font: 400 12px/1.6 var(--font-body);
+  color: var(--text-3);
+}
+.micro-center {
+  margin: 14px var(--page-pad) 10px;
+  font: 400 12px/1.5 var(--font-body);
+  color: var(--text-3);
+  text-align: center;
+}

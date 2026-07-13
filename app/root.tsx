@@ -3,7 +3,9 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import '@fontsource-variable/bricolage-grotesque';
 import './styles/tokens.css';
 import './styles/app.css';
+import './styles/components.css';
 import { TabBar } from './components/TabBar';
+import { AppStateProvider } from './state/AppState';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -37,9 +39,11 @@ export default function Root() {
   }, []);
 
   return (
-    <div className="app-frame">
-      <Outlet />
-      <TabBar />
-    </div>
+    <AppStateProvider>
+      <div className="app-frame">
+        <Outlet />
+        <TabBar />
+      </div>
+    </AppStateProvider>
   );
 }
