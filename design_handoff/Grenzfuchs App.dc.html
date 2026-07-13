@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#e9e5dc;font-family:system-ui,sans-serif}
+a{color:oklch(0.42 0.18 300);text-decoration:none}a:hover{color:oklch(0.32 0.16 300)}
+input,button{font-family:inherit}
+@keyframes gfPop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="max-width:430px;margin:0 auto;min-height:100vh;background:#fdfbf7;font-family:'Bricolage Grotesque',system-ui,sans-serif;color:#241f2e;position:relative;padding-bottom:92px;box-shadow:0 0 40px rgba(0,0,0,0.12)">
+
+  <!-- Statusbar -->
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px 4px;font:600 13px system-ui;color:#241f2e"><span>9:41</span><span style="letter-spacing:2px">▪▪▪ ⏻</span></div>
+
+  <!-- ================= HOME ================= -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Home" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:14px 22px 0;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:9px">
+        <div style="width:36px;height:36px;border-radius:50%;background:oklch(0.55 0.2 300);color:#fff;display:grid;place-items:center;font-size:17px">🦊</div>
+        <div style="font-size:20px;font-weight:800;letter-spacing:-0.4px">Grenzfuchs</div>
+      </div>
+      <button onClick="{{ goSprit }}" style="width:36px;height:36px;border-radius:50%;background:#f1ede4;border:none;display:grid;place-items:center;font-size:15px;cursor:pointer">🔔</button>
+    </div>
+    <div style="padding:14px 22px 0">
+      <h1 style="margin:0;font-size:29px;line-height:1.1;font-weight:800;letter-spacing:-0.7px">Schlau tanken.<br><span style="color:oklch(0.5 0.2 300)">Drüben</span> sparen.</h1>
+      <p style="margin:8px 0 0;font:400 14px/1.5 system-ui;color:#6f6a7c">Der Fuchs weiß, wo's günstiger ist — heute in Luxemburg.</p>
+    </div>
+    <!-- Ticket -->
+    <button onClick="{{ goUmweg }}" style="display:block;width:calc(100% - 44px);text-align:left;margin:18px 22px 0;background:oklch(0.55 0.2 300);border:none;border-radius:20px;padding:18px 20px;color:#fff;position:relative;cursor:pointer;font-family:inherit">
+      <div style="position:absolute;left:-9px;top:58%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="position:absolute;right:-9px;top:58%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="font-size:12px;font-weight:600;opacity:0.75;text-transform:uppercase;letter-spacing:1px">Deine Tankfüllung heute (50 l)</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px">
+        <div style="font-size:44px;line-height:1;font-weight:800;letter-spacing:-1.5px">−{{ homeSave }}&nbsp;€</div>
+        <div style="font-size:14px;font-weight:600;opacity:0.85">in LU statt DE</div>
+      </div>
+      <div style="border-top:2px dashed rgba(255,255,255,0.3);margin-top:14px;padding-top:12px;display:flex;justify-content:space-between;font-size:13px;font-weight:500">
+        <span style="opacity:0.85">{{ fuelName }} · LU {{ pLU }} € · DE {{ pDE }} €</span>
+        <span style="font-weight:700">Details →</span>
+      </div>
+    </button>
+    <!-- Tool-Kacheln -->
+    <div style="padding:20px 22px 4px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <button onClick="{{ goSprit }}" style="text-align:left;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:16px 15px;min-height:96px;cursor:pointer;font-family:inherit;color:#241f2e" style-hover="border-color:oklch(0.75 0.1 300)">
+        <div style="font-size:22px">⛽</div>
+        <div style="font-size:14.5px;line-height:1.25;font-weight:700;margin-top:8px">Spritpreise<br>vergleichen</div>
+      </button>
+      <button onClick="{{ goUmweg }}" style="text-align:left;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:16px 15px;min-height:96px;cursor:pointer;font-family:inherit;color:#241f2e" style-hover="border-color:oklch(0.75 0.1 300)">
+        <div style="font-size:22px">🧭</div>
+        <div style="font-size:14.5px;line-height:1.25;font-weight:700;margin-top:8px">Lohnt sich<br>der Umweg?</div>
+      </button>
+      <button onClick="{{ goShop }}" style="text-align:left;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:16px 15px;min-height:96px;cursor:pointer;font-family:inherit;color:#241f2e" style-hover="border-color:oklch(0.75 0.1 300)">
+        <div style="font-size:22px">🛒</div>
+        <div style="font-size:14.5px;line-height:1.25;font-weight:700;margin-top:8px">Einkauf<br>drüben rechnen</div>
+      </button>
+      <button onClick="{{ goRatgeber }}" style="text-align:left;background:oklch(0.95 0.03 300);border:1.5px solid oklch(0.88 0.06 300);border-radius:18px;padding:16px 15px;min-height:96px;cursor:pointer;font-family:inherit" style-hover="border-color:oklch(0.75 0.1 300)">
+        <div style="font-size:22px">📖</div>
+        <div style="font-size:14.5px;line-height:1.25;font-weight:700;color:oklch(0.42 0.18 300);margin-top:8px">Ratgeber<br>&amp; Zoll-Wissen</div>
+      </button>
+    </div>
+    <p style="margin:14px 22px 10px;font:400 12px/1.5 system-ui;color:#a09aac;text-align:center">Kostenlos · ohne Anmeldung · Preise von heute 08:12</p>
+  </div>
+  </sc-if>
+
+  <!-- ================= SPRITPREIS-VERGLEICH ================= -->
+  <sc-if value="{{ isSprit }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Spritpreis-Vergleich" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:12px 22px 0">
+      <button onClick="{{ goHome }}" style="background:none;border:none;padding:4px 0;font:600 13.5px 'Bricolage Grotesque';color:oklch(0.42 0.18 300);cursor:pointer">‹ Start</button>
+      <h1 style="margin:4px 0 0;font-size:25px;font-weight:800;letter-spacing:-0.5px">⛽ Spritpreise</h1>
+      <p style="margin:5px 0 0;font:400 13.5px/1.5 system-ui;color:#6f6a7c">Achse Saarbrücken → Forbach → Luxemburg</p>
+    </div>
+    <!-- Filter -->
+    <div style="display:flex;gap:8px;padding:14px 22px 0">
+      <sc-for list="{{ fuels }}" as="f" hint-placeholder-count="3">
+        <button onClick="{{ f.pick }}" style="border-radius:99px;padding:9px 16px;font:600 13.5px 'Bricolage Grotesque';cursor:pointer;background:{{ f.bg }};color:{{ f.color }};border:1.5px solid {{ f.border }}">{{ f.label }}</button>
+      </sc-for>
+    </div>
+    <div style="padding:12px 22px 0">
+      <div style="display:flex;justify-content:space-between;font:500 12.5px system-ui;color:#6f6a7c"><span>Umkreis</span><span style="font-weight:700;color:#241f2e">{{ radius }} km</span></div>
+      <input type="range" min="5" max="50" step="5" value="{{ radius }}" onChange="{{ setRadius }}" style="width:100%;accent-color:oklch(0.55 0.2 300);margin-top:4px">
+    </div>
+    <!-- Stilisierte Achsen-Karte -->
+    <div style="margin:12px 22px 0;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:18px 18px 14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;position:relative">
+        <div style="position:absolute;left:12%;right:12%;top:13px;border-top:2.5px dashed #ded9cd"></div>
+        <sc-for list="{{ mapStops }}" as="stop" hint-placeholder-count="3">
+          <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;width:33%">
+            <div style="width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 11px 'Bricolage Grotesque';background:{{ stop.bg }};color:{{ stop.color }};border:2px solid {{ stop.border }}">{{ stop.land }}</div>
+            <div style="font:700 14px 'Bricolage Grotesque';color:{{ stop.priceColor }}">{{ stop.price }} {{ stop.arrow }}</div>
+            <div style="font:400 10.5px system-ui;color:#a09aac">{{ stop.ort }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <!-- Liste -->
+    <div style="padding:14px 22px 0;display:grid;gap:8px">
+      <sc-for list="{{ stationRows }}" as="st" hint-placeholder-count="6">
+        <div>
+          <sc-if value="{{ st.isGroupStart }}" hint-placeholder-val="{{ false }}">
+            <div style="font:700 12px 'Bricolage Grotesque';color:#a09aac;text-transform:uppercase;letter-spacing:1px;margin:10px 2px 8px">{{ st.groupLabel }}</div>
+          </sc-if>
+          <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid {{ st.cardBorder }};border-radius:16px;padding:13px 15px">
+            <div style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font:700 12px 'Bricolage Grotesque';background:{{ st.badgeBg }};color:{{ st.badgeColor }}">{{ st.land }}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font:700 14px 'Bricolage Grotesque'">{{ st.name }}</div>
+              <div style="font:400 12px system-ui;color:#6f6a7c">{{ st.ort }} · {{ st.km }} km</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font:800 17px 'Bricolage Grotesque';color:{{ st.priceColor }}">{{ st.price }} €</div>
+              <div style="font:600 11px system-ui;color:{{ st.deltaColor }}">{{ st.delta }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <!-- Preis-Alarm -->
+    <sc-if value="{{ showAlarm }}" hint-placeholder-val="{{ false }}">
+    <div style="margin:18px 22px 10px;background:oklch(0.95 0.03 300);border:1.5px solid oklch(0.88 0.06 300);border-radius:18px;padding:16px 18px">
+      <sc-if value="{{ alarmNotSent }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="font:700 14px 'Bricolage Grotesque';color:oklch(0.42 0.18 300)">🔔 Preis-Alarm (optional)</div>
+          <p style="margin:5px 0 10px;font:400 12.5px/1.5 system-ui;color:#6f6a7c">Wir schreiben dir, wenn {{ fuelName }} in LU unter 1,50 € fällt. Nur E-Mail, kein Account.</p>
+          <div style="display:flex;gap:8px">
+            <input type="email" placeholder="deine@mail.de" value="{{ alarmEmail }}" onChange="{{ setAlarmEmail }}" style="flex:1;min-width:0;border:1.5px solid oklch(0.88 0.06 300);border-radius:12px;padding:11px 13px;font:400 13.5px system-ui;background:#fff;color:#241f2e;outline:none">
+            <button onClick="{{ sendAlarm }}" style="border:none;border-radius:12px;padding:11px 16px;background:oklch(0.55 0.2 300);color:#fff;font:700 13.5px 'Bricolage Grotesque';cursor:pointer">OK</button>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ alarmSent }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13.5px/1.5 'Bricolage Grotesque';color:oklch(0.42 0.18 300)">✓ Alles klar! Wir melden uns, sobald der Preis fällt. Abmelden jederzeit mit einem Klick.</div>
+      </sc-if>
+    </div>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!-- ================= UMWEG-RECHNER ================= -->
+  <sc-if value="{{ isUmweg }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Umweg-Rechner" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:12px 22px 0">
+      <button onClick="{{ goHome }}" style="background:none;border:none;padding:4px 0;font:600 13.5px 'Bricolage Grotesque';color:oklch(0.42 0.18 300);cursor:pointer">‹ Start</button>
+      <h1 style="margin:4px 0 0;font-size:25px;font-weight:800;letter-spacing:-0.5px">🧭 Lohnt sich der Umweg?</h1>
+      <p style="margin:5px 0 0;font:400 13.5px/1.5 system-ui;color:#6f6a7c">Tanken in Luxemburg statt zuhause — nach Abzug der Fahrtkosten.</p>
+    </div>
+    <div style="margin:16px 22px 0;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:16px 18px;display:grid;gap:16px">
+      <div>
+        <div style="display:flex;justify-content:space-between;font:500 12.5px system-ui;color:#6f6a7c"><span>Umweg (einfache Strecke)</span><span style="font-weight:700;color:#241f2e">{{ detourKm }} km</span></div>
+        <input type="range" min="0" max="60" step="1" value="{{ detourKm }}" onChange="{{ setDetour }}" style="width:100%;accent-color:oklch(0.55 0.2 300);margin-top:4px">
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font:500 12.5px system-ui;color:#6f6a7c"><span>Verbrauch</span><span style="font-weight:700;color:#241f2e">{{ verbrauchStr }} l/100 km</span></div>
+        <input type="range" min="4" max="12" step="0.1" value="{{ verbrauch }}" onChange="{{ setVerbrauch }}" style="width:100%;accent-color:oklch(0.55 0.2 300);margin-top:4px">
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font:500 12.5px system-ui;color:#6f6a7c"><span>Tankvolumen</span><span style="font-weight:700;color:#241f2e">{{ tank }} l</span></div>
+        <input type="range" min="30" max="80" step="5" value="{{ tank }}" onChange="{{ setTank }}" style="width:100%;accent-color:oklch(0.55 0.2 300);margin-top:4px">
+      </div>
+    </div>
+    <!-- Ergebnis-Ticket -->
+    <div style="margin:16px 22px 0;background:{{ verdictBg }};border-radius:20px;padding:18px 20px;color:#fff;position:relative">
+      <div style="position:absolute;left:-9px;top:55%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="position:absolute;right:-9px;top:55%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="font-size:12px;font-weight:600;opacity:0.8;text-transform:uppercase;letter-spacing:1px">Deine Netto-Ersparnis</div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-top:6px">
+        <div style="font-size:46px;line-height:1;font-weight:800;letter-spacing:-1.5px">{{ netStr }}&nbsp;€</div>
+      </div>
+      <div style="font-size:16px;font-weight:800;margin-top:8px">{{ verdict }}</div>
+      <div style="border-top:2px dashed rgba(255,255,255,0.35);margin-top:14px;padding-top:12px;display:grid;gap:5px;font:500 13px system-ui">
+        <div style="display:flex;justify-content:space-between"><span style="opacity:0.85">Ersparnis an der Zapfsäule ({{ fuelName }})</span><span style="font-weight:700">+{{ grossStr }} €</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="opacity:0.85">Fahrtkosten Umweg (hin &amp; zurück)</span><span style="font-weight:700">−{{ costStr }} €</span></div>
+      </div>
+    </div>
+    <p style="margin:12px 22px 10px;font:400 12px/1.6 system-ui;color:#a09aac">Rechnung: {{ tank }} l × (DE {{ pDE }} € − LU {{ pLU }} €) minus {{ detourKm }} km × 2 Fahrtkosten. Zeit &amp; Verschleiß nicht eingerechnet.</p>
+  </div>
+  </sc-if>
+
+  <!-- ================= GRENZSHOPPING-RECHNER ================= -->
+  <sc-if value="{{ isShop }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Grenzshopping-Rechner" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:12px 22px 0">
+      <button onClick="{{ goHome }}" style="background:none;border:none;padding:4px 0;font:600 13.5px 'Bricolage Grotesque';color:oklch(0.42 0.18 300);cursor:pointer">‹ Start</button>
+      <h1 style="margin:4px 0 0;font-size:25px;font-weight:800;letter-spacing:-0.5px">🛒 Einkauf drüben rechnen</h1>
+      <p style="margin:5px 0 0;font:400 13.5px/1.5 system-ui;color:#6f6a7c">Was spart dein Einkauf in Luxemburg? Inklusive Zoll-Check.</p>
+    </div>
+    <div style="padding:16px 22px 0;display:grid;gap:10px">
+      <sc-for list="{{ products }}" as="pr" hint-placeholder-count="4">
+        <div style="background:#fff;border:1.5px solid {{ pr.border }};border-radius:18px;padding:14px 16px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="font-size:22px">{{ pr.icon }}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font:700 14.5px 'Bricolage Grotesque'">{{ pr.name }}</div>
+              <div style="font:400 12px system-ui;color:#6f6a7c">{{ pr.unit }} · DE {{ pr.deStr }} € / LU {{ pr.luStr }} €</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <button onClick="{{ pr.dec }}" style="width:34px;height:34px;border-radius:50%;border:1.5px solid #ece7db;background:#fdfbf7;font:700 17px 'Bricolage Grotesque';color:#241f2e;cursor:pointer">−</button>
+              <div style="min-width:26px;text-align:center;font:800 16px 'Bricolage Grotesque'">{{ pr.qty }}</div>
+              <button onClick="{{ pr.inc }}" style="width:34px;height:34px;border-radius:50%;border:none;background:oklch(0.55 0.2 300);color:#fff;font:700 17px 'Bricolage Grotesque';cursor:pointer">+</button>
+            </div>
+          </div>
+          <sc-if value="{{ pr.hasSave }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;justify-content:space-between;border-top:1.5px dashed #ece7db;margin-top:11px;padding-top:9px;font:600 12.5px system-ui">
+              <span style="color:#6f6a7c">Ersparnis</span><span style="color:oklch(0.45 0.12 155)">−{{ pr.saveStr }} €</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ pr.over }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:10px;background:oklch(0.96 0.04 80);border:1.5px solid oklch(0.85 0.09 80);border-radius:12px;padding:9px 12px;font:600 12px/1.45 system-ui;color:oklch(0.45 0.1 60)">⚠️ Zoll-Freimenge überschritten: max. {{ pr.limitText }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <!-- Summen-Ticket -->
+    <div style="margin:16px 22px 0;background:oklch(0.55 0.2 300);border-radius:20px;padding:18px 20px;color:#fff;position:relative">
+      <div style="position:absolute;left:-9px;top:52%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="position:absolute;right:-9px;top:52%;width:18px;height:18px;border-radius:50%;background:#fdfbf7"></div>
+      <div style="font-size:12px;font-weight:600;opacity:0.8;text-transform:uppercase;letter-spacing:1px">Dein Einkauf spart</div>
+      <div style="font-size:46px;line-height:1;font-weight:800;letter-spacing:-1.5px;margin-top:6px">−{{ totalSaveStr }}&nbsp;€</div>
+      <div style="border-top:2px dashed rgba(255,255,255,0.35);margin-top:14px;padding-top:10px;font:500 13px system-ui;opacity:0.9">{{ shopSummary }}</div>
+    </div>
+    <p style="margin:12px 22px 10px;font:400 12px/1.6 system-ui;color:#a09aac">Freimengen gelten pro Person für den Eigenbedarf (EU-Richtwerte). Beispielpreise, Stand heute.</p>
+  </div>
+  </sc-if>
+
+  <!-- ================= RATGEBER ================= -->
+  <sc-if value="{{ isRatgeber }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Ratgeber" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:12px 22px 0">
+      <button onClick="{{ goHome }}" style="background:none;border:none;padding:4px 0;font:600 13.5px 'Bricolage Grotesque';color:oklch(0.42 0.18 300);cursor:pointer">‹ Start</button>
+      <h1 style="margin:4px 0 0;font-size:25px;font-weight:800;letter-spacing:-0.5px">📖 Ratgeber &amp; Zoll-Wissen</h1>
+      <p style="margin:5px 0 0;font:400 13.5px/1.5 system-ui;color:#6f6a7c">Kurz, verständlich, ohne Amtsdeutsch.</p>
+    </div>
+    <div style="padding:16px 22px 10px;display:grid;gap:10px">
+      <sc-for list="{{ articleItems }}" as="a" hint-placeholder-count="3">
+        <button onClick="{{ a.open }}" style="text-align:left;background:#fff;border:1.5px solid #ece7db;border-radius:18px;padding:16px 17px;cursor:pointer;font-family:inherit;color:#241f2e" style-hover="border-color:oklch(0.75 0.1 300)">
+          <div style="font:600 11px 'Bricolage Grotesque';color:oklch(0.5 0.2 300);text-transform:uppercase;letter-spacing:1px">{{ a.kicker }} · {{ a.min }} Lesezeit</div>
+          <div style="font:700 16.5px/1.25 'Bricolage Grotesque';margin-top:6px">{{ a.title }}</div>
+          <div style="font:400 13px/1.5 system-ui;color:#6f6a7c;margin-top:5px">{{ a.teaser }}</div>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ================= ARTIKEL ================= -->
+  <sc-if value="{{ isArticle }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Ratgeber-Artikel" style="animation:gfPop 0.25s ease-out">
+    <div style="padding:12px 22px 0">
+      <button onClick="{{ goRatgeber }}" style="background:none;border:none;padding:4px 0;font:600 13.5px 'Bricolage Grotesque';color:oklch(0.42 0.18 300);cursor:pointer">‹ Ratgeber</button>
+      <div style="font:600 11px 'Bricolage Grotesque';color:oklch(0.5 0.2 300);text-transform:uppercase;letter-spacing:1px;margin-top:8px">{{ artKicker }} · {{ artMin }} Lesezeit</div>
+      <h1 style="margin:6px 0 0;font-size:26px;line-height:1.15;font-weight:800;letter-spacing:-0.6px">{{ artTitle }}</h1>
+      <p style="margin:8px 0 0;font:400 12px system-ui;color:#a09aac">Aktualisiert: Juli 2026 · Grenzfuchs-Redaktion</p>
+    </div>
+    <div style="padding:14px 22px 10px;max-width:100%">
+      <sc-for list="{{ artBlocks }}" as="b" hint-placeholder-count="6">
+        <div>
+          <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}">
+            <h2 style="margin:20px 0 0;font-size:18px;font-weight:800;letter-spacing:-0.3px">{{ b.text }}</h2>
+          </sc-if>
+          <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:11px 0 0;font:400 15px/1.65 system-ui;color:#3d3849;text-wrap:pretty">{{ b.text }}</p>
+          </sc-if>
+          <sc-if value="{{ b.isLi }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:10px;margin:9px 0 0;background:#fff;border:1.5px solid #ece7db;border-radius:14px;padding:12px 14px;font:500 13.5px/1.5 system-ui;color:#3d3849"><span>✅</span><span>{{ b.text }}</span></div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div style="margin:22px 0 6px;background:oklch(0.95 0.03 300);border:1.5px solid oklch(0.88 0.06 300);border-radius:16px;padding:14px 16px">
+        <div style="font:700 14px 'Bricolage Grotesque';color:oklch(0.42 0.18 300)">🦊 Fuchs-Tipp</div>
+        <p style="margin:5px 0 10px;font:400 13px/1.55 system-ui;color:#3d3849">Rechne deinen konkreten Einkauf durch — in 30 Sekunden, ohne Anmeldung.</p>
+        <button onClick="{{ goShop }}" style="border:none;border-radius:12px;padding:11px 16px;background:oklch(0.55 0.2 300);color:#fff;font:700 13.5px 'Bricolage Grotesque';cursor:pointer">Zum Grenzshopping-Rechner →</button>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ================= TAB BAR ================= -->
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(253,251,247,0.94);backdrop-filter:blur(10px);border-top:1.5px solid #ece7db;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 10px 18px;z-index:10">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+      <button onClick="{{ t.go }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;border-radius:12px">
+        <span style="font-size:19px;filter:{{ t.filter }}">{{ t.icon }}</span>
+        <span style="font:600 10.5px 'Bricolage Grotesque';color:{{ t.color }}">{{ t.label }}</span>
+      </button>
+    </sc-for>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:900},&quot;showPriceAlarm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Funktionen&quot;},&quot;defaultFuel&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;diesel&quot;,&quot;e5&quot;,&quot;e10&quot;],&quot;default&quot;:&quot;diesel&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Funktionen&quot;}}">
+class Component extends DCLogic {
+  state = {
+    screen: 'home', article: -1,
+    fuel: null, radius: 40,
+    detourKm: 12, verbrauch: 6.5, tank: 50,
+    qty: { sprit: 50, tabak: 2, kaffee: 2, alkohol: 2 },
+    alarmEmail: '', alarmSent: false,
+  };
+
+  fmt(n, d = 2) {
+    return n.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+
+  renderVals() {
+    const S = this.state;
+    const PURPLE = 'oklch(0.55 0.2 300)';
+    const DEEP = 'oklch(0.42 0.18 300)';
+    const GREEN = 'oklch(0.45 0.12 155)';
+    const ORANGE = 'oklch(0.55 0.13 40)';
+    const INK = '#241f2e';
+    const showAlarm = this.props.showPriceAlarm ?? true;
+    const fuel = S.fuel ?? (this.props.defaultFuel ?? 'diesel');
+    const fuelNames = { diesel: 'Diesel', e5: 'Super E5', e10: 'Super E10' };
+    const prices = {
+      diesel: { LU: 1.519, FR: 1.609, DE: 1.659 },
+      e5:     { LU: 1.598, FR: 1.719, DE: 1.779 },
+      e10:    { LU: 1.552, FR: 1.679, DE: 1.729 },
+    };
+    const p = prices[fuel];
+
+    const go = (screen) => () => this.setState({ screen, article: -1 });
+
+    // --- Sprit ---
+    const fuels = ['diesel', 'e5', 'e10'].map((f) => ({
+      label: fuelNames[f],
+      bg: f === fuel ? PURPLE : '#fff',
+      color: f === fuel ? '#fff' : '#6f6a7c',
+      border: f === fuel ? PURPLE : '#ece7db',
+      pick: () => this.setState({ fuel: f }),
+    }));
+
+    const raw = [
+      { land: 'LU', group: 'Luxemburg', name: 'Gulf Frisange', ort: 'Frisange', km: 28, p: { diesel: 1.519, e5: 1.598, e10: 1.552 } },
+      { land: 'LU', group: 'Luxemburg', name: 'Q8 Dudelange', ort: 'Dudelange', km: 31, p: { diesel: 1.524, e5: 1.604, e10: 1.559 } },
+      { land: 'LU', group: 'Luxemburg', name: 'Shell Schengen', ort: 'Schengen', km: 38, p: { diesel: 1.531, e5: 1.612, e10: 1.566 } },
+      { land: 'FR', group: 'Frankreich', name: 'E.Leclerc Station', ort: 'Forbach', km: 9, p: { diesel: 1.609, e5: 1.719, e10: 1.679 } },
+      { land: 'FR', group: 'Frankreich', name: 'TotalEnergies Access', ort: 'Stiring-Wendel', km: 7, p: { diesel: 1.622, e5: 1.731, e10: 1.692 } },
+      { land: 'DE', group: 'Deutschland', name: 'JET Saarbrücken', ort: 'Mainzer Straße', km: 2, p: { diesel: 1.659, e5: 1.779, e10: 1.729 } },
+      { land: 'DE', group: 'Deutschland', name: 'Esso Güdingen', ort: 'Saargemünder Str.', km: 5, p: { diesel: 1.679, e5: 1.799, e10: 1.749 } },
+    ].filter((s) => s.km <= S.radius);
+
+    const best = raw.length ? Math.min(...raw.map((s) => s.p[fuel])) : 0;
+    const order = { LU: 0, FR: 1, DE: 2 };
+    const sorted = [...raw].sort((a, b) => order[a.land] - order[b.land] || a.p[fuel] - b.p[fuel]);
+    const stationRows = sorted.map((s, i) => {
+      const price = s.p[fuel];
+      const deltaCt = Math.round((price - best) * 100);
+      const cheapest = deltaCt === 0;
+      return {
+        ...s,
+        isGroupStart: i === 0 || sorted[i - 1].land !== s.land,
+        groupLabel: s.group,
+        price: this.fmt(price, 3).slice(0, -1),
+        delta: cheapest ? '▼ günstigster' : '+' + deltaCt + ' ct',
+        priceColor: cheapest ? GREEN : deltaCt >= 10 ? ORANGE : INK,
+        deltaColor: cheapest ? GREEN : '#a09aac',
+        cardBorder: cheapest ? 'oklch(0.85 0.06 155)' : '#ece7db',
+        badgeBg: cheapest ? 'oklch(0.95 0.03 155)' : '#f1ede4',
+        badgeColor: cheapest ? GREEN : '#6f6a7c',
+      };
+    });
+
+    const stopDefs = [['DE', 'Saarbrücken'], ['FR', 'Forbach'], ['LU', 'Frisange']];
+    const mapStops = stopDefs.map(([land, ort]) => {
+      const inLand = raw.filter((s) => s.land === land);
+      const min = inLand.length ? Math.min(...inLand.map((s) => s.p[fuel])) : null;
+      const isBest = min !== null && Math.abs(min - best) < 0.0001;
+      return {
+        land, ort,
+        price: min === null ? '—' : this.fmt(min),
+        arrow: min === null ? '' : isBest ? '▼' : '▲',
+        priceColor: isBest ? GREEN : ORANGE,
+        bg: isBest ? 'oklch(0.95 0.03 155)' : '#f1ede4',
+        color: isBest ? GREEN : '#6f6a7c',
+        border: isBest ? 'oklch(0.75 0.12 155)' : '#ded9cd',
+      };
+    });
+
+    // --- Umweg ---
+    const gross = S.tank * (p.DE - p.LU);
+    const cost = 2 * S.detourKm * (S.verbrauch / 100) * p.LU;
+    const net = gross - cost;
+    let verdict, verdictBg;
+    if (net > 1) { verdict = 'Ja, der Umweg lohnt sich! 🎉'; verdictBg = 'oklch(0.5 0.13 155)'; }
+    else if (net > 0) { verdict = 'Knapp — kaum der Rede wert.'; verdictBg = 'oklch(0.6 0.11 80)'; }
+    else { verdict = 'Nein, bleib lieber hier.'; verdictBg = 'oklch(0.55 0.13 40)'; }
+
+    // --- Shopping ---
+    const defs = [
+      { key: 'sprit', icon: '⛽', name: 'Diesel tanken', unit: 'Liter', de: p.DE, lu: p.LU, step: 10, limit: 70, limitText: 'voller Tank + 20 l Kanister' },
+      { key: 'tabak', icon: '🚬', name: 'Zigaretten', unit: 'Stange (200 Stk.)', de: 84.0, lu: 56.5, step: 1, limit: 4, limitText: '4 Stangen (800 Zigaretten)' },
+      { key: 'kaffee', icon: '☕', name: 'Kaffee', unit: 'kg', de: 9.9, lu: 8.1, step: 1, limit: 10, limitText: '10 kg pro Person' },
+      { key: 'alkohol', icon: '🥃', name: 'Spirituosen', unit: 'Flasche 0,7 l', de: 13.99, lu: 10.4, step: 1, limit: 14, limitText: '10 l Spirituosen (≈ 14 Flaschen)' },
+    ];
+    const products = defs.map((d) => {
+      const qty = S.qty[d.key];
+      const save = qty * (d.de - d.lu);
+      const over = qty > d.limit;
+      const setQ = (q) => this.setState((s) => ({ qty: { ...s.qty, [d.key]: Math.max(0, Math.min(199, q)) } }));
+      return {
+        ...d, qty,
+        deStr: this.fmt(d.de), luStr: this.fmt(d.lu),
+        hasSave: save > 0, saveStr: this.fmt(save),
+        over, border: over ? 'oklch(0.85 0.09 80)' : '#ece7db',
+        inc: () => setQ(qty + d.step), dec: () => setQ(qty - d.step),
+      };
+    });
+    const totalSave = products.reduce((a, r) => a + r.qty * (r.de - r.lu), 0);
+    const overCount = products.filter((r) => r.over).length;
+    const shopSummary = overCount
+      ? '⚠️ ' + overCount + ' Freimenge(n) überschritten — Menge reduzieren oder Abgaben einplanen.'
+      : '✓ Alles innerhalb der Zoll-Freimengen. Gute Fahrt!';
+
+    // --- Ratgeber ---
+    const articles = [
+      {
+        kicker: 'Zoll', min: '4 Min.', title: 'Zoll-Freimengen einfach erklärt',
+        teaser: 'Wie viel Kaffee, Tabak und Alkohol darfst du aus Luxemburg mitbringen — ohne Ärger an der Grenze?',
+        blocks: [
+          { isP: true, text: 'Innerhalb der EU gibt es keine Zollgrenzen mehr — aber sehr wohl Richtmengen. Bleibst du darunter, gilt dein Einkauf automatisch als Eigenbedarf und niemand stellt Fragen.' },
+          { isH: true, text: 'Die wichtigsten Richtmengen pro Person' },
+          { isLi: true, text: 'Zigaretten: 800 Stück (4 Stangen)' },
+          { isLi: true, text: 'Spirituosen: 10 Liter' },
+          { isLi: true, text: 'Kaffee: 10 kg (wegen der deutschen Kaffeesteuer)' },
+          { isLi: true, text: 'Kraftstoff: der Tankinhalt plus 20 Liter im Reservekanister' },
+          { isH: true, text: 'Was passiert, wenn ich drüber liege?' },
+          { isP: true, text: 'Dann musst du glaubhaft machen, dass alles für dich privat ist — sonst werden deutsche Verbrauchsteuern fällig, bei Tabak schnell dreistellig. Unser Grenzshopping-Rechner warnt dich automatisch, bevor es kritisch wird.' },
+          { isP: true, text: 'Wichtig: Die Mengen gelten pro Person, nicht pro Auto. Zu zweit darfst du also doppelt so viel mitbringen.' },
+        ],
+      },
+      {
+        kicker: 'Tanken', min: '3 Min.', title: 'Wo lohnt sich Tanken wirklich?',
+        teaser: 'Luxemburg ist fast immer am günstigsten — aber nicht für jeden. Die Faustregeln.',
+        blocks: [
+          { isP: true, text: 'Luxemburg deckelt die Spritpreise staatlich, deshalb liegt Diesel dort meist 10–15 Cent unter dem deutschen Preis. Frankreich liegt dazwischen, schwankt aber stark je nach Supermarkt-Tankstelle.' },
+          { isH: true, text: 'Die Faustregel' },
+          { isP: true, text: 'Pro 10 Cent Preisunterschied und 50-Liter-Tank sparst du 5 Euro. Jeder Kilometer Umweg kostet dich (hin und zurück) etwa 20 Cent. Mehr als 15–20 km Umweg lohnen sich also selten — außer du fährst sowieso vorbei.' },
+          { isLi: true, text: 'Pendler mit Arbeitsweg über die Grenze: immer drüben tanken.' },
+          { isLi: true, text: 'Extra-Fahrt nur für den Tank: erst mit dem Umweg-Rechner prüfen.' },
+          { isP: true, text: 'Preise ändern sich in Luxemburg meist um Mitternacht, in Frankreich morgens. Ein Blick vor der Abfahrt lohnt sich.' },
+        ],
+      },
+      {
+        kicker: 'Basics', min: '3 Min.', title: 'Pendler-Basics: Einkaufen in drei Ländern',
+        teaser: 'Kaffee in Luxemburg, Käse in Frankreich, Drogerie in Deutschland — wer wo wirklich spart.',
+        blocks: [
+          { isP: true, text: 'Jedes Land der Großregion hat seine Preis-Spezialität. Wer die Wege sowieso fährt, kombiniert clever — ganz ohne Extra-Kilometer.' },
+          { isLi: true, text: 'Luxemburg: Kraftstoff, Tabak, Kaffee, Spirituosen (niedrige Verbrauchsteuern)' },
+          { isLi: true, text: 'Frankreich: Käse, Wein, Frischwaren im Supermarkt' },
+          { isLi: true, text: 'Deutschland: Drogerie, Haushalt, viele Markenprodukte' },
+          { isP: true, text: 'Der größte Hebel bleibt der Tank: Wer zweimal pro Woche in Luxemburg statt in Deutschland tankt, spart übers Jahr mehrere hundert Euro.' },
+        ],
+      },
+    ];
+    const articleItems = articles.map((a, i) => ({
+      ...a,
+      open: () => this.setState({ screen: 'article', article: i }),
+    }));
+    const art = articles[Math.max(0, S.article)];
+
+    // --- Tabs ---
+    const tabDefs = [
+      { icon: '🏠', label: 'Start', s: 'home' },
+      { icon: '⛽', label: 'Sprit', s: 'sprit' },
+      { icon: '🧭', label: 'Umweg', s: 'umweg' },
+      { icon: '🛒', label: 'Einkauf', s: 'shop' },
+      { icon: '📖', label: 'Wissen', s: 'ratgeber' },
+    ];
+    const activeTab = S.screen === 'article' ? 'ratgeber' : S.screen;
+    const tabs = tabDefs.map((t) => ({
+      ...t,
+      color: t.s === activeTab ? DEEP : '#a09aac',
+      filter: t.s === activeTab ? 'none' : 'grayscale(1) opacity(0.55)',
+      go: go(t.s),
+    }));
+
+    return {
+      isHome: S.screen === 'home', isSprit: S.screen === 'sprit', isUmweg: S.screen === 'umweg',
+      isShop: S.screen === 'shop', isRatgeber: S.screen === 'ratgeber', isArticle: S.screen === 'article',
+      goHome: go('home'), goSprit: go('sprit'), goUmweg: go('umweg'), goShop: go('shop'), goRatgeber: go('ratgeber'),
+      fuelName: fuelNames[fuel],
+      pLU: this.fmt(p.LU), pDE: this.fmt(p.DE),
+      homeSave: this.fmt(50 * (p.DE - p.LU)),
+      fuels, radius: S.radius,
+      setRadius: (e) => this.setState({ radius: +e.target.value }),
+      mapStops, stationRows,
+      showAlarm, alarmSent: S.alarmSent, alarmNotSent: !S.alarmSent,
+      alarmEmail: S.alarmEmail,
+      setAlarmEmail: (e) => this.setState({ alarmEmail: e.target.value }),
+      sendAlarm: () => this.setState({ alarmSent: true }),
+      detourKm: S.detourKm, verbrauch: S.verbrauch, tank: S.tank,
+      verbrauchStr: this.fmt(S.verbrauch, 1),
+      setDetour: (e) => this.setState({ detourKm: +e.target.value }),
+      setVerbrauch: (e) => this.setState({ verbrauch: +e.target.value }),
+      setTank: (e) => this.setState({ tank: +e.target.value }),
+      grossStr: this.fmt(gross), costStr: this.fmt(cost),
+      netStr: (net >= 0 ? '−' : '+') + this.fmt(Math.abs(net)),
+      verdict, verdictBg,
+      products, totalSaveStr: this.fmt(totalSave), shopSummary,
+      articleItems,
+      artKicker: art.kicker, artMin: art.min, artTitle: art.title, artBlocks: art.blocks,
+      tabs,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

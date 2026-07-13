@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.react-router/
+
+# Env / Secrets (Tankerkönig-Key u. Ä.)
+.env
+.env.*
+!.env.example
+
+# Logs & Caches
+*.log
+.cache/
+.vite/
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
